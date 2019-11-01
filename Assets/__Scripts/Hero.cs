@@ -78,7 +78,7 @@ public class Hero : MonoBehaviour {
 
     //TODO: replace or comment out later
     void TempFire()
-    {                                                      
+    {
         GameObject projGO = Instantiate<GameObject>(projectilePrefab);
 
         projGO.transform.position = transform.position;
@@ -86,7 +86,7 @@ public class Hero : MonoBehaviour {
 
         //        rigidB.velocity = Vector3.up * projectileSpeed;        
 
-        Projectile proj = projGO.GetComponent<Projectile>();  
+        Projectile proj = projGO.GetComponent<Projectile>();
 
         proj.type = WeaponType.blaster;
         float tSpeed = Main.GetWeaponDefinition(proj.type).velocity;
