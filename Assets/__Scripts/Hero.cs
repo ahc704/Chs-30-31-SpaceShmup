@@ -21,13 +21,11 @@ public class Hero : MonoBehaviour {
 
     // This variable holds a reference to the last triggering GameObject
     private GameObject lastTriggerGo = null;
+    public delegate void WeaponFireDelegate();
+    public WeaponFireDelegate fireDelegate;
 
 
-    //TODO: Add function delegate declaration
-
-
-
-	void Start()
+    void Start()
     {
         if (S == null)
         {
