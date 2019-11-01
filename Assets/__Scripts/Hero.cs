@@ -59,15 +59,12 @@ public class Hero : MonoBehaviour {
         transform.rotation = Quaternion.Euler(yAxis * pitchMult, xAxis * rollMult, 0);
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {                          
-            TempFire();                                                   
+        if (Input.GetAxis("Jump") == 1 && fireDelegate != null)
+        {
+            fireDelegate();
         }
 
-        //TODO: Replace the TempFire call with the weapon delgate call
-        // Use the fireDelegate to fire Weapons
-        // First, make sure the button is pressed: Axis("Jump")
-        // Then ensure that fireDelegate isn't null to avoid an error
+
 
 
 
@@ -91,6 +88,7 @@ public class Hero : MonoBehaviour {
         proj.type = WeaponType.blaster;
         float tSpeed = Main.GetWeaponDefinition(proj.type).velocity;
         rigidB.velocity = Vector3.up * tSpeed;
+
     }
 
 
